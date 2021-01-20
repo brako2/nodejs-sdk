@@ -105,11 +105,6 @@ var RestClientApi = /*#__PURE__*/function () {
 
       if (queryParams === undefined || queryParams === null) {
         throw new Error("Missing queryParams when calling resourceGet");
-      } // verify the required queryParams are set
-
-
-      if (queryParams.access_token === undefined || queryParams.access_token === null) {
-        throw new Error("Missing accessToken when calling resourceGet");
       }
 
       var pathParams = {
