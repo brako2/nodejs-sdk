@@ -134,6 +134,7 @@ export default class RestClientApi {
     let contentTypes = [];
     let accepts = [];
     let returnType = null;
+    let callback = null;
     return this.apiClient.callApi(
       resource,
       "GET",
