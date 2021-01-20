@@ -95,19 +95,23 @@ var RestClientApi = /*#__PURE__*/function () {
 
   }, {
     key: "resourceGet",
-    value: function resourceGet(resource, queryParams, accessToken, callback) {
+    value: function resourceGet(resource, queryParams, callback) {
       var postBody = null; // verify the required parameter 'resource' is set
 
       if (resource === undefined || resource === null) {
         throw new Error("Missing the required parameter 'resource' when calling resourceGet");
-      } // verify the required parameter 'accessToken' is set
+      } // verify the required queryParams are set
 
 
-      if (accessToken === undefined || accessToken === null) {
-        throw new Error("Missing the required parameter 'accessToken' when calling resourceGet");
+      if (queryParams === undefined || queryParams === null) {
+        throw new Error("Missing queryParams when calling resourceGet");
+      } // verify the required queryParams are set
+
+
+      if (queryParams.access_token === undefined || queryParams.access_token === null) {
+        throw new Error("Missing accessToken when calling resourceGet");
       }
 
-      queryParams.access_token = accessToken;
       var pathParams = {
         resource: resource
       };

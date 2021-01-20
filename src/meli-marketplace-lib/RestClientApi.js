@@ -104,7 +104,7 @@ export default class RestClientApi {
    * @param {String} accessToken
    * @param {module:meli-marketplace-lib/RestClientApi~resourceGetCallback} callback The callback function, accepting three arguments: error, data, response
    */
-  resourceGet(resource, queryParams, accessToken, callback) {
+  resourceGet(resource, queryParams, callback) {
     let postBody = null;
     // verify the required parameter 'resource' is set
     if (resource === undefined || resource === null) {
@@ -112,14 +112,17 @@ export default class RestClientApi {
         "Missing the required parameter 'resource' when calling resourceGet"
       );
     }
-    // verify the required parameter 'accessToken' is set
-    if (accessToken === undefined || accessToken === null) {
-      throw new Error(
-        "Missing the required parameter 'accessToken' when calling resourceGet"
-      );
+    // verify the required queryParams are set
+    if (queryParams === undefined || queryParams === null) {
+      throw new Error("Missing queryParams when calling resourceGet");
     }
-
-    queryParams.access_token = accessToken;
+    // verify the required queryParams are set
+    if (
+      queryParams.access_token === undefined ||
+      queryParams.access_token === null
+    ) {
+      throw new Error("Missing accessToken when calling resourceGet");
+    }
 
     let pathParams = {
       resource: resource,
