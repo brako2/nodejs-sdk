@@ -90,12 +90,11 @@ var RestClientApi = /*#__PURE__*/function () {
      * @param {String} resource
      * @param {Object} queryParams
      * @param {String} accessToken
-     * @param {module:meli-marketplace-lib/RestClientApi~resourceGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
 
   }, {
     key: "resourceGet",
-    value: function resourceGet(resource, queryParams, callback) {
+    value: function resourceGet(resource, queryParams, accessToken) {
       var postBody = null; // verify the required parameter 'resource' is set
 
       if (resource === undefined || resource === null) {
@@ -105,8 +104,14 @@ var RestClientApi = /*#__PURE__*/function () {
 
       if (queryParams === undefined || queryParams === null) {
         throw new Error("Missing queryParams when calling resourceGet");
+      } // verify accessToken is set
+
+
+      if (accessToken === undefined || accessToken === null) {
+        throw new Error("Missing accessToken when calling resourceGet");
       }
 
+      queryParams["access_token"] = accessToken;
       var pathParams = {
         resource: resource
       };
