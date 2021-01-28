@@ -131,11 +131,11 @@ class ApiClient {
       } else {
         value = fullMatch;
       }
-      console.log("VALUEEEE");
-      console.log(value);
+
       return encodeURIComponent(value);
     });
-
+    console.log("VALUEEEE");
+    console.log(url);
     return url;
   }
 
