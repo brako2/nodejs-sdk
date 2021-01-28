@@ -99,7 +99,7 @@ class ApiClient {
       return "";
     }
     if (param instanceof Date) {
-      return param.toISOString();
+      return param.toJSON();
     }
 
     return param.toString();
