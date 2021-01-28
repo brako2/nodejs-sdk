@@ -167,6 +167,7 @@ export default class RestClientApi {
    * @param {Object} body
    * @param {module:meli-marketplace-lib/RestClientApi~resourcePostCallback} callback The callback function, accepting three arguments: error, data, response
    */
+
   resourcePost(resource, accessToken, body, callback) {
     let postBody = body;
     // verify the required parameter 'resource' is set

@@ -111,7 +111,7 @@ var ApiClient = /*#__PURE__*/function () {
       }
 
       if (param instanceof Date) {
-        return param.toJSON();
+        return param.toISOString();
       }
 
       return param.toString();
