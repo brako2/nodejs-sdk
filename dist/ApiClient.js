@@ -149,6 +149,8 @@ var ApiClient = /*#__PURE__*/function () {
           value = fullMatch;
         }
 
+        console.log("VALUEEEE");
+        console.log(value);
         return encodeURIComponent(value);
       });
       return url;
@@ -254,8 +256,6 @@ var ApiClient = /*#__PURE__*/function () {
         }
       }
 
-      console.log("NEW PARAMS!!!");
-      console.log(newParams);
       return newParams;
     }
     /**
