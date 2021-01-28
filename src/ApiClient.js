@@ -99,9 +99,10 @@ class ApiClient {
       return "";
     }
     if (param instanceof Date) {
+      console.log("DATE!!");
+      console.log(param);
       return param.toJSON();
     }
-
     return param.toString();
   }
 
