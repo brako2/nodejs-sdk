@@ -111,10 +111,6 @@ var ApiClient = /*#__PURE__*/function () {
       }
 
       if (param instanceof Date) {
-        console.log("DATE!!");
-        console.log(param);
-        console.log(param.toJSON());
-        console.log(param.toISOString());
         return param.toJSON();
       }
 
@@ -258,6 +254,8 @@ var ApiClient = /*#__PURE__*/function () {
         }
       }
 
+      console.log("NEW PARAMS!!!");
+      console.log(newParams);
       return newParams;
     }
     /**
