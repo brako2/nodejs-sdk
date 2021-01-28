@@ -132,6 +132,7 @@ class ApiClient {
         value = fullMatch;
       }
 
+      console.log(value);
       return encodeURIComponent(value);
     });
 
@@ -231,8 +232,6 @@ class ApiClient {
         }
       }
     }
-    console.log("NEW PARAMS!!!");
-    console.log(newParams);
     return newParams;
   }
 
