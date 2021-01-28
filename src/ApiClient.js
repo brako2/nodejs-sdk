@@ -134,8 +134,6 @@ class ApiClient {
 
       return encodeURIComponent(value);
     });
-    console.log("VALUEEEE");
-    console.log(url);
     return url;
   }
 
@@ -232,6 +230,8 @@ class ApiClient {
         }
       }
     }
+    console.log("PARAMSSS!!");
+    console.log(newParams);
     return newParams;
   }
 
