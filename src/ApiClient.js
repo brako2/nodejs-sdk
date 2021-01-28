@@ -230,8 +230,6 @@ class ApiClient {
         }
       }
     }
-    console.log("PARAMSSS!!");
-    console.log(newParams);
     return newParams;
   }
 
