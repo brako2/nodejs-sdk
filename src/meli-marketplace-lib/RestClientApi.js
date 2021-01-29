@@ -129,12 +129,12 @@ export default class RestClientApi {
 
     let headerParams = {};
     let formParams = {};
-
     let authNames = [];
     let contentTypes = [];
     let accepts = [];
     let returnType = null;
     let callback = null;
+
     return this.apiClient.callApi(
       resource,
       "GET",
