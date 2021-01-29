@@ -406,12 +406,13 @@ class ApiClient {
       var str = [];
       for (var p in obj)
         if (obj.hasOwnProperty(p)) {
-          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          str.push(encodeURI(p) + "=" + encodeURI(obj[p]));
         }
       return str.join("&");
     };
-
+    console.log("************");
     console.log(serializer(this.normalizeParams(queryParams)));
+    console.log("************");
 
     request.query(this.normalizeParams(queryParams));
 
