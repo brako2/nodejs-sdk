@@ -402,7 +402,7 @@ class ApiClient {
       queryParams["_"] = new Date().getTime();
     }
 
-    serialize = function (obj) {
+    serializer = function (obj) {
       var str = [];
       for (var p in obj)
         if (obj.hasOwnProperty(p)) {
@@ -411,7 +411,7 @@ class ApiClient {
       return str.join("&");
     };
 
-    console.log(serialize(this.normalizeParams(queryParams)));
+    console.log(serializer(this.normalizeParams(queryParams)));
 
     request.query(this.normalizeParams(queryParams));
 

@@ -436,7 +436,7 @@ var ApiClient = /*#__PURE__*/function () {
         queryParams["_"] = new Date().getTime();
       }
 
-      _v.serialize = (function serialize(obj) {
+      serializer = function serializer(obj) {
         var str = [];
 
         for (var p in obj) {
@@ -446,10 +446,9 @@ var ApiClient = /*#__PURE__*/function () {
         }
 
         return str.join("&");
-      }, function () {
-        throw new Error('"' + "serialize" + '" is read-only.');
-      }());
-      console.log((0, _v.serialize)(this.normalizeParams(queryParams)));
+      };
+
+      console.log(serializer(this.normalizeParams(queryParams)));
       request.query(this.normalizeParams(queryParams)); // set header parameters
 
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); // set requestAgent if it is set by user
