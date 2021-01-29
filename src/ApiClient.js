@@ -401,7 +401,7 @@ class ApiClient {
       queryParams["_"] = new Date().getTime();
     }
 
-    request.query(this.normalizeParams(queryParams));
+    request.query(querystring.stringify(this.normalizeParams(queryParams)));
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
