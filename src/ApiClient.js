@@ -401,9 +401,13 @@ class ApiClient {
       queryParams["_"] = new Date().getTime();
     }
 
-    console.log(querystring.stringify(this.normalizeParams(queryParams)));
+    console.log(
+      querystring.stringify(this.normalizeParams(queryParams), null, null, {
+        encodeURIComponent: gbkEncodeURIComponent,
+      })
+    );
 
-    request.query(querystring.stringify(this.normalizeParams(queryParams)));
+    request.query(this.normalizeParams(queryParams));
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
