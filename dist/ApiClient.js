@@ -9,6 +9,8 @@ var _superagent = _interopRequireDefault(require("superagent"));
 
 var _querystring = _interopRequireDefault(require("querystring"));
 
+var _v = require("v8");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -434,7 +436,20 @@ var ApiClient = /*#__PURE__*/function () {
         queryParams["_"] = new Date().getTime();
       }
 
-      console.log(_querystring["default"].stringify(this.normalizeParams(queryParams), null, null, encodeURI));
+      _v.serialize = (function serialize(obj) {
+        var str = [];
+
+        for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          }
+        }
+
+        return str.join("&");
+      }, function () {
+        throw new Error('"' + "serialize" + '" is read-only.');
+      }());
+      console.log((0, _v.serialize)(this.normalizeParams(queryParams)));
       request.query(this.normalizeParams(queryParams)); // set header parameters
 
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); // set requestAgent if it is set by user

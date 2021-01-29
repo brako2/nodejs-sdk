@@ -13,6 +13,7 @@
 
 import superagent from "superagent";
 import querystring from "querystring";
+import { serialize } from "v8";
 
 /**
  * @module ApiClient
@@ -401,14 +402,16 @@ class ApiClient {
       queryParams["_"] = new Date().getTime();
     }
 
-    console.log(
-      querystring.stringify(
-        this.normalizeParams(queryParams),
-        null,
-        null,
-        encodeURI
-      )
-    );
+    serialize = function (obj) {
+      var str = [];
+      for (var p in obj)
+        if (obj.hasOwnProperty(p)) {
+          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        }
+      return str.join("&");
+    };
+
+    console.log(serialize(this.normalizeParams(queryParams)));
 
     request.query(this.normalizeParams(queryParams));
 
