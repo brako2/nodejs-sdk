@@ -254,8 +254,6 @@ var ApiClient = /*#__PURE__*/function () {
         }
       }
 
-      console.log("PARAMSSS!!");
-      console.log(newParams);
       return newParams;
     }
     /**
