@@ -414,7 +414,7 @@ class ApiClient {
     console.log(serializer(this.normalizeParams(queryParams)));
     console.log("************");
 
-    request.query(this.normalizeParams(queryParams));
+    request.query(serializer(this.normalizeParams(queryParams)));
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));

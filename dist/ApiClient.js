@@ -451,7 +451,7 @@ var ApiClient = /*#__PURE__*/function () {
       console.log("************");
       console.log(serializer(this.normalizeParams(queryParams)));
       console.log("************");
-      request.query(this.normalizeParams(queryParams)); // set header parameters
+      request.query(serializer(this.normalizeParams(queryParams))); // set header parameters
 
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); // set requestAgent if it is set by user
 
