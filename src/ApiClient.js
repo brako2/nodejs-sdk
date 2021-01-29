@@ -402,7 +402,7 @@ class ApiClient {
       queryParams["_"] = new Date().getTime();
     }
 
-    serializer = function (obj) {
+    let serializer = function (obj) {
       var str = [];
       for (var p in obj)
         if (obj.hasOwnProperty(p)) {

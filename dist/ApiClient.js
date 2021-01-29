@@ -436,7 +436,7 @@ var ApiClient = /*#__PURE__*/function () {
         queryParams["_"] = new Date().getTime();
       }
 
-      serializer = function serializer(obj) {
+      var serializer = function serializer(obj) {
         var str = [];
 
         for (var p in obj) {
