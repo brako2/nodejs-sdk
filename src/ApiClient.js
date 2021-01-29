@@ -402,9 +402,12 @@ class ApiClient {
     }
 
     console.log(
-      querystring.stringify(this.normalizeParams(queryParams), null, null, {
-        encodeURIComponent: gbkEncodeURIComponent,
-      })
+      querystring.stringify(
+        this.normalizeParams(queryParams),
+        null,
+        null,
+        encodeURI
+      )
     );
 
     request.query(this.normalizeParams(queryParams));

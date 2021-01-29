@@ -434,9 +434,7 @@ var ApiClient = /*#__PURE__*/function () {
         queryParams["_"] = new Date().getTime();
       }
 
-      console.log(_querystring["default"].stringify(this.normalizeParams(queryParams), null, null, {
-        encodeURIComponent: gbkEncodeURIComponent
-      }));
+      console.log(_querystring["default"].stringify(this.normalizeParams(queryParams), null, null, encodeURI));
       request.query(this.normalizeParams(queryParams)); // set header parameters
 
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); // set requestAgent if it is set by user
