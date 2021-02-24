@@ -202,6 +202,11 @@ export default class RestClientApi {
     let accepts = [];
     let returnType = null;
     let callback = null;
+
+    console.log(resource);
+    console.log(postBody);
+    console.log(queryParams);
+
     return this.apiClient.callApi(
       resource,
       "POST",
