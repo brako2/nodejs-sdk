@@ -178,10 +178,8 @@ export default class RestClientApi {
     }
     // verify accessToken is set
     if (accessToken === undefined || accessToken === null) {
-      throw new Error("Missing accessToken when calling resourceGet");
+      throw new Error("Missing accessToken when calling resourcePost");
     }
-
-    let queryParams = { access_token: accessToken };
 
     // verify the required parameter 'body' is set
     if (body === undefined || body === null) {
@@ -192,6 +190,9 @@ export default class RestClientApi {
 
     let pathParams = {
       resource: resource,
+    };
+    let queryParams = {
+      access_token: accessToken,
     };
 
     let headerParams = {};

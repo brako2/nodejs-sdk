@@ -384,6 +384,7 @@ class ApiClient {
     callback
   ) {
     var url = this.buildUrl(path, pathParams, apiBasePath);
+    console.log(url);
     var request = superagent(httpMethod, url);
 
     if (this.plugins !== null) {

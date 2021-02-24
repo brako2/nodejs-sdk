@@ -419,6 +419,7 @@ var ApiClient = /*#__PURE__*/function () {
       var _this3 = this;
 
       var url = this.buildUrl(path, pathParams, apiBasePath);
+      console.log(url);
       var request = (0, _superagent["default"])(httpMethod, url);
 
       if (this.plugins !== null) {
