@@ -181,7 +181,7 @@ export default class RestClientApi {
       throw new Error("Missing accessToken when calling resourceGet");
     }
 
-    queryParams["access_token"] = accessToken;
+    let queryParams = { access_token: accessToken };
 
     // verify the required parameter 'body' is set
     if (body === undefined || body === null) {

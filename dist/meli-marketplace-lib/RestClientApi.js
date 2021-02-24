@@ -154,7 +154,9 @@ var RestClientApi = /*#__PURE__*/function () {
         throw new Error("Missing accessToken when calling resourceGet");
       }
 
-      queryParams["access_token"] = accessToken; // verify the required parameter 'body' is set
+      var queryParams = {
+        access_token: accessToken
+      }; // verify the required parameter 'body' is set
 
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling resourcePost");
