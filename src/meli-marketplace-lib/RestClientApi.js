@@ -201,6 +201,7 @@ export default class RestClientApi {
     let contentTypes = ["application/json"];
     let accepts = [];
     let returnType = null;
+    let callback = null;
     return this.apiClient.callApi(
       resource,
       "POST",
