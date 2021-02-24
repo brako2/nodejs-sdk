@@ -172,6 +172,9 @@ var RestClientApi = /*#__PURE__*/function () {
       var accepts = [];
       var returnType = null;
       var callback = null;
+      console.log(resource);
+      console.log(postBody);
+      console.log(queryParams);
       return this.apiClient.callApi(resource, "POST", pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
