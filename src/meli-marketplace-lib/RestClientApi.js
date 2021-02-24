@@ -168,7 +168,7 @@ export default class RestClientApi {
    * @param {module:meli-marketplace-lib/RestClientApi~resourcePostCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
-  resourcePost(resource, accessToken, body, callback) {
+  resourcePost(resource, body, accessToken) {
     let postBody = body;
     // verify the required parameter 'resource' is set
     if (resource === undefined || resource === null) {
@@ -176,12 +176,13 @@ export default class RestClientApi {
         "Missing the required parameter 'resource' when calling resourcePost"
       );
     }
-    // verify the required parameter 'accessToken' is set
+    // verify accessToken is set
     if (accessToken === undefined || accessToken === null) {
-      throw new Error(
-        "Missing the required parameter 'accessToken' when calling resourcePost"
-      );
+      throw new Error("Missing accessToken when calling resourceGet");
     }
+
+    queryParams["access_token"] = accessToken;
+
     // verify the required parameter 'body' is set
     if (body === undefined || body === null) {
       throw new Error(
@@ -192,9 +193,7 @@ export default class RestClientApi {
     let pathParams = {
       resource: resource,
     };
-    let queryParams = {
-      access_token: accessToken,
-    };
+
     let headerParams = {};
     let formParams = {};
 
@@ -234,7 +233,7 @@ export default class RestClientApi {
    * @param {Object} body
    * @param {module:meli-marketplace-lib/RestClientApi~resourcePutCallback} callback The callback function, accepting three arguments: error, data, response
    */
-  resourcePut(resource, accessToken, body, callback) {
+  resourcePut(resource, body, accessToken) {
     let postBody = body;
     // verify the required parameter 'resource' is set
     if (resource === undefined || resource === null) {
@@ -244,10 +243,10 @@ export default class RestClientApi {
     }
     // verify the required parameter 'accessToken' is set
     if (accessToken === undefined || accessToken === null) {
-      throw new Error(
-        "Missing the required parameter 'accessToken' when calling resourcePut"
-      );
+      throw new Error("Missing accessToken when calling resourceGet");
     }
+    queryParams["access_token"] = accessToken;
+
     // verify the required parameter 'body' is set
     if (body === undefined || body === null) {
       throw new Error(

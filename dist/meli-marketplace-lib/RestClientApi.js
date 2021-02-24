@@ -142,18 +142,19 @@ var RestClientApi = /*#__PURE__*/function () {
 
   }, {
     key: "resourcePost",
-    value: function resourcePost(resource, accessToken, body, callback) {
+    value: function resourcePost(resource, body, accessToken) {
       var postBody = body; // verify the required parameter 'resource' is set
 
       if (resource === undefined || resource === null) {
         throw new Error("Missing the required parameter 'resource' when calling resourcePost");
-      } // verify the required parameter 'accessToken' is set
+      } // verify accessToken is set
 
 
       if (accessToken === undefined || accessToken === null) {
-        throw new Error("Missing the required parameter 'accessToken' when calling resourcePost");
-      } // verify the required parameter 'body' is set
+        throw new Error("Missing accessToken when calling resourceGet");
+      }
 
+      queryParams["access_token"] = accessToken; // verify the required parameter 'body' is set
 
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling resourcePost");
@@ -161,9 +162,6 @@ var RestClientApi = /*#__PURE__*/function () {
 
       var pathParams = {
         resource: resource
-      };
-      var queryParams = {
-        access_token: accessToken
       };
       var headerParams = {};
       var formParams = {};
@@ -191,7 +189,7 @@ var RestClientApi = /*#__PURE__*/function () {
 
   }, {
     key: "resourcePut",
-    value: function resourcePut(resource, accessToken, body, callback) {
+    value: function resourcePut(resource, body, accessToken) {
       var postBody = body; // verify the required parameter 'resource' is set
 
       if (resource === undefined || resource === null) {
@@ -200,9 +198,10 @@ var RestClientApi = /*#__PURE__*/function () {
 
 
       if (accessToken === undefined || accessToken === null) {
-        throw new Error("Missing the required parameter 'accessToken' when calling resourcePut");
-      } // verify the required parameter 'body' is set
+        throw new Error("Missing accessToken when calling resourceGet");
+      }
 
+      queryParams["access_token"] = accessToken; // verify the required parameter 'body' is set
 
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling resourcePut");
